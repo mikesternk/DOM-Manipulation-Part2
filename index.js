@@ -35,3 +35,7 @@ menuLinks.forEach((link) => {
   anchor.href = link.href;
   topMenuEl.appendChild(anchor);
 });
+
+/******** CODE STARTS HERE **********/
+// DOM MANIPULATION: PART TWO
+// Part 2
