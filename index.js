@@ -15,8 +15,8 @@ console.log(topMenuEl);
 
 topMenuEl.style.height = "100%";
 
-var navcolor = "var(--top-menu-bg)";
-topMenuEl.style.backgroundColor = navcolor;
+var navColor = "var(--top-menu-bg)";
+topMenuEl.style.backgroundColor = navColor;
 
 topMenuEl.classList = "flex-around";
 
@@ -38,4 +38,17 @@ menuLinks.forEach((link) => {
 
 /******** CODE STARTS HERE **********/
 // DOM MANIPULATION: PART TWO
-// Part 2
+// Part 3
+let subMenuEl = document.getElementById("sub-menu");
+console.log(subMenuEl);
+
+subMenuEl.style.height = "100%";
+
+var subNavColor = "var(--sub-menu-bg)";
+subMenuEl.style.backgroundColor = subNavColor;
+
+subMenuEl.classList = "flex-around";
+
+subMenuEl.style.position = "absolute";
+subMenuEl.style.top = "0";
+// subMenuEl.style.zIndex = "100";
