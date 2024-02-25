@@ -126,15 +126,15 @@ topMenuEl.addEventListener("click", (event) => {
     subMenuEl.innerHTML = "";
     subMenuEl.style.top = "0";
   }
-
+  // If the ABOUT link is clicked, an <h1>About</h1> should be displayed.
+  if (event.target.textContent == "about") {
+    mainEl.innerHTML = "<h1>About</h1>";
+    console.log(`About was clicked: ${event.target.textContent}`);
+  }
   // event.target.classList.add("active");
   // event.target.classList.toggle("active");
 
   // Part 5
-  // Get the corresponding link object from menuLinks
-  // const clickedLinkObject = menuLinks.find(
-  //   (link) => link.text === event.target.innerText
-  // );
 });
 
 // creating the helper function
@@ -160,3 +160,26 @@ const buildSubmenu = (subLinksArray) => {
     });
   }
 };
+
+subMenuEl.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  //  immediately return if the element clicked was not an <a> element.
+  if (!event.target.matches("a")) return;
+
+  // log contents to ensure handler is working
+  console.log(event);
+
+  // set the CSS top property of subMenuEl to 0
+  subMenuEl.style.top = "0";
+
+  // Remove the active class from each <a> element in topMenuLinks
+  topMenuLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  // Update the contents of mainEl, within an <h1>, to the contents of the <a> element clicked within subMenuEl.
+  mainEl.innerHTML = `<h1>${event.target.textContent}</h1>`;
+
+  console.log(event.target.textContent);
+});
